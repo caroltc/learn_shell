@@ -279,3 +279,36 @@ hello adm,3
 hello lp,4
 hello sync,5
 ```
+
+## 程序结构
+
+### 变量
+```bash
+export 修改导出环境变量
+readonly 只读变量
+unset 删除变量或函数
+```
+
+### sleep
+```bash
+#等待10s
+sleep 10
+```
+
+### 展开运算符
+```bash
+${var:-word} 相当于 return var !=NULL ? var : word
+${var:word}  相当于 var = var !=NULL ? var : word
+${var:?word} 相当于if(var != NULL){return var;}else{ print var:word; exit;}
+${var:+word} 相当于 return var == NULL ? var : word
+eg: filename=${1:-/src/data/access.log}
+```
+
+### 位置参数
+```bash
+$1,$2...${10},${11} 位置参数
+$# 参数总数
+$@,$* 所有参数
+"$*" = "$1 $2 $3 ... "
+"$@" = "$1" "$2" ...
+```
