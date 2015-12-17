@@ -351,3 +351,50 @@ else
     echo 'hello undifinend'
 fi
 ```
+### test
+```bash
+#test产生可使用的退出状态
+
+#!/bin/bash
+
+if test "$1"x = "a"x ;then
+    echo "hello a"
+elif test "$1"x = "b"x ;then
+    echo "hello b"
+else
+    echo 'hello undifinend'
+fi
+
+#test表达式
+-f file 一般文件
+-d file 目录
+-e file 存在
+-n string 不为空
+-z string 为null
+-r file 可读
+-w file 可写
+-s file 不为空
+-x file 可执行或查找的目录
+= 字符串相等
+!= 字符串不相等
+-eq 整数等于
+-ne 整数不等于
+-lt 小于
+-gt 大于
+-le 小于等于
+-ge 大于等于
+
+#!/bin/bash
+
+file="$1"
+
+if [ ! -x "$file" ];then
+    echo $file is not executable
+fi
+
+if [ -f "$file" ];then
+    echo $file is a regular file
+elif [ -d "$file" ];then
+    echo $file is a directory
+fi
+```
